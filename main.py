@@ -1,5 +1,8 @@
 # put help statment here
 
+# import for testing
+import unittest
+
 class Category:
   def __init__(self, category_name):
     self.category_name = category_name
@@ -48,7 +51,7 @@ class Category:
 
   def __str__(self):
     # setup first row: title line formating 
-    title_line_spacing = "{:*^" + str(30)+ "}"
+    title_line_spacing = "{:*^30}"
     title_line = title_line_spacing.format(self.category_name)
     
     # setup formating for each ledger entry row
@@ -224,21 +227,4 @@ def create_chart_labels(category_names):
   return list_of_rows
 
 if __name__ == "__main__":
-  food = Category("Food")
-  food.deposit(1000, "initial deposit")
-  food.withdraw(10.15, "groceries")
-  food.withdraw(15.89, "restaurant and more food for dessert")
-  # print(food.get_balance())
-  clothing = Category("Clothing")
-  food.transfer(50, clothing)
-  clothing.withdraw(25.55)
-  clothing.withdraw(100)
-  auto = Category("Auto")
-  auto.deposit(1000, "initial deposit")
-  auto.withdraw(15)
-
-  print(clothing)
-  print(auto)
-  print(food)
-  print(create_spend_chart([food, clothing, auto]))
-   
+  unittest.main(module='test_module', exit=False)
